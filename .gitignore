@@ -1,0 +1,15 @@
+# Rust
+/target/
+Cargo.lock
+
+# eBPF
+*.o
+*.ll
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
