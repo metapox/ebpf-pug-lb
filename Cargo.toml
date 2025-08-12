@@ -1,0 +1,33 @@
+[package]
+name = "ebpf-pug-lb"
+version = "0.1.0"
+edition = "2021"
+authors = ["minamitakumi"]
+description = "eBPF L7 Rate Limiter - High-performance application-level rate limiting in kernel space"
+license = "MIT"
+repository = "https://github.com/minamitakumi/ebpf-pug-lb"
+
+[workspace]
+members = [
+    "ebpf-pug-lb",
+    "ebpf-pug-lb-common",
+    "ebpf-pug-lb-ebpf",
+]
+
+[workspace.dependencies]
+aya = { version = "0.12", features = ["async_tokio"] }
+aya-log = "0.2"
+anyhow = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+clap = { version = "4.0", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4"
+env_logger = "0.10"
+
+# eBPF specific dependencies
+aya-bpf = "0.1"
+aya-log-ebpf = "0.1"
+
+[package.metadata.generate-schema]
+schema_path = "schema/"
